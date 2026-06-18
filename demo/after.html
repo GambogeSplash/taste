@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing</title>
+<style>
+  :root {
+    --paper: #F6F3EC;
+    --ink: #191613;
+    --muted: #6E665C;
+    --line: #E3DDD1;
+    --accent: #0E4F47;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 96px 32px; }
+  .eyebrow { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  h1 { font-family: ui-serif, "Iowan Old Style", Georgia, "Times New Roman", serif; font-size: 52px; line-height: 1.05; letter-spacing: -.01em; font-weight: 600; max-width: 15ch; margin-bottom: 16px; }
+  .sub { color: var(--muted); font-size: 18px; line-height: 1.5; max-width: 46ch; margin-bottom: 56px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+  .card { padding: 32px 28px; border-radius: 14px; border: 1px solid var(--line); background: transparent; }
+  .card.rec { background: var(--ink); border-color: var(--ink); color: var(--paper); box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 20px 44px -26px rgba(25,22,19,.6); }
+  .rec-tag { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8FD6CB; margin-bottom: 18px; }
+  .plan { font-size: 15px; font-weight: 600; letter-spacing: .01em; margin-bottom: 6px; }
+  .desc { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+  .card.rec .desc { color: #B9B1A4; }
+  .price { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 46px; font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1; }
+  .per { font-size: 14px; color: var(--muted); margin-left: 2px; font-family: system-ui, sans-serif; }
+  .card.rec .per { color: #B9B1A4; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+  .card.rec hr { border-color: rgba(255,255,255,.14); }
+  ul { list-style: none; }
+  li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; font-size: 14.5px; color: #3C372F; }
+  .card.rec li { color: #E8E2D6; }
+  li:before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: 0 0 auto; transform: translateY(5px); }
+  .card.rec li:before { background: #5FC2B4; }
+  .cta { display: block; text-align: center; margin-top: 28px; padding: 12px; border-radius: 9px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .cta.solid { background: var(--accent); color: #fff; }
+  .cta.quiet { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .card.rec .cta.solid { background: var(--paper); color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <h1>Priced for the work, not the logo.</h1>
+    <p class="sub">Start free and stay free while it's just you. Pay when the team and the projects are real.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="plan">Starter</div>
+        <div class="desc">For trying things out</div>
+        <div class="price">$0<span class="per">/mo</span></div>
+        <hr>
+        <ul><li>1 project</li><li>Community support</li><li>Basic analytics</li></ul>
+        <a class="cta quiet">Start free</a>
+      </div>
+      <div class="card rec">
+        <div class="rec-tag">Recommended</div>
+        <div class="plan">Pro</div>
+        <div class="desc">For working teams</div>
+        <div class="price">$24<span class="per">/mo</span></div>
+        <hr>
+        <ul><li>Unlimited projects</li><li>Priority support</li><li>Advanced analytics</li><li>Custom domains</li></ul>
+        <a class="cta solid">Choose Pro</a>
+      </div>
+      <div class="card">
+        <div class="plan">Scale</div>
+        <div class="desc">For growing companies</div>
+        <div class="price">$99<span class="per">/mo</span></div>
+        <hr>
+        <ul><li>Everything in Pro</li><li>SSO and SAML</li><li>Audit logs</li><li>Dedicated manager</li></ul>
+        <a class="cta quiet">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

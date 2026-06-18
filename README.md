@@ -10,6 +10,23 @@ Given a UI task with no direction, language models converge on the same look: a 
 
 Two things set it apart. First, it does not stop at animation. A polished transition on top of a generic layout, the wrong typeface, and a broken empty state is still bad work, so the standard covers the whole decision, frame first. Second, it bakes in the one habit that separates code that "looks done" from work that is actually right: render it, screenshot it, compare it to the intent, and fix the gap. No upsell, no course to finish, no gated first response. It just does the work.
 
+## Before and after
+
+The same brief, the same plans, the same copy. The only variable is the design judgment. On the left is the look these models reach for by default; on the right is the same page with Taste applied.
+
+| Without the skill | With the skill |
+| --- | --- |
+| ![Pricing page in the default style: Inter, a purple gradient heading, a sparkle badge, three evenly weighted centered cards with a colored border on the popular tier](demo/before.png) | ![The same pricing page with Taste applied: a serif heading and monospace prices, a warm paper palette with one deep teal accent, and the recommended tier carrying real visual weight as a solid block](demo/after.png) |
+
+What changed, and why:
+
+- **Type carries the signal.** A default SaaS sans for everything becomes a serif display heading, a grotesque for body, and a monospace for the prices. High contrast between two faces reads as intentional.
+- **A palette that means something.** The purple-to-blue gradient becomes warm paper, ink, and a single deep teal accent doing all the work. No gradient, no second color competing.
+- **Weight maps to truth.** The recommended tier stops being a card with a colored border and becomes the solid, saturated block. The quieter tiers step back instead of the loud one being toned down.
+- **The tells are gone.** No sparkle icon, no centered-everything, no drop shadow on every card. Depth is one deliberate elevation on the tier that earns it.
+
+Both are static mockups built to make the difference legible; the point is the judgment, not these exact pixels. The source is in [`demo/`](demo).
+
 ## What is inside
 
 ```
