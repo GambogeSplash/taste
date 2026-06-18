@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "taste",
+  "description": "Taste: a portable design-engineering standard that turns Claude into a senior design engineer.",
+  "owner": {
+    "name": "John Wright-Nyingifa",
+    "url": "https://github.com/GambogeSplash"
+  },
+  "plugins": [
+    {
+      "name": "taste",
+      "description": "Design-engineering standard: avoid generic AI defaults, motion that feels right, real accessibility, and a render-and-compare verification habit.",
+      "author": {
+        "name": "John Wright-Nyingifa"
+      },
+      "category": "design",
+      "source": {
+        "source": "./"
+      },
+      "homepage": "https://github.com/GambogeSplash/taste"
+    }
+  ]
+}

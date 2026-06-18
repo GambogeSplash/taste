@@ -1,27 +1,33 @@
 # Taste
 
-A design-engineering standard for Claude. Drop it into a project and Claude does front-end and design work to a senior bar: considered visuals instead of generic defaults, motion that feels right, real accessibility, and a habit of looking at the rendered result before calling it done.
+A design-engineering standard for Claude. Drop it into a project and Claude does front-end and design work to a senior bar: considered visuals instead of generic defaults, motion that feels right, real accessibility, and the habit most AI design work skips, looking at the rendered result before calling it done.
 
-It teaches judgment, not a fixed house style. A house style copied into every project is just a new kind of generic, so this gives Claude the principles a senior design engineer reasons with, plus the specific numbers (motion durations, contrast ratios, hit targets, Core Web Vitals) to aim at.
+It is full-spectrum and vendor-neutral. In 2026 the best design engineers are fluent in motion, so Taste goes deep there: the battle-tested recipes (named easing curves, spring physics, interruptible transitions, `clip-path` reveals, GPU and main-thread traps, gesture thresholds) plus the current platform-native layer most guides have not caught up to (View Transitions, scroll-driven animations, animating `height: auto`, discrete-property exits, CSS `linear()` springs), and the habit of judging motion by watching it run, not by reading the values. Then it keeps going across the rest of the surface that motion alone cannot carry: framing the problem, type and color and layout, depth, micro-interactions, accessibility, and performance. It teaches the reasoning a senior design engineer uses, not one person's house style, and gives the exact numbers to hit (motion durations, contrast ratios, hit targets, Core Web Vitals), then asks Claude to verify against them.
 
 ## Why
 
-Given a UI task with no direction, language models converge on the same look: a default SaaS sans, a purple gradient on white, evenly rounded cards, a centered hero, a sparkle icon on anything related to AI. It is competent and forgettable. This standard pushes past that average, and it bakes in the one habit most AI design work skips: render it, screenshot it, compare it to the intent, and fix the gap.
+Given a UI task with no direction, language models converge on the same look: a default SaaS sans, a purple gradient on white, evenly rounded cards, a centered hero, a sparkle icon on anything related to AI. It is competent and forgettable. Taste pushes past that average.
+
+Two things set it apart. First, it does not stop at animation. A polished transition on top of a generic layout, the wrong typeface, and a broken empty state is still bad work, so the standard covers the whole decision, frame first. Second, it bakes in the one habit that separates code that "looks done" from work that is actually right: render it, screenshot it, compare it to the intent, and fix the gap. No upsell, no course to finish, no gated first response. It just does the work.
 
 ## What is inside
 
 ```
 skills/design-engineering/SKILL.md   The standard itself, ready to use as a skill
+skills/design-engineering/MOTION.md  Deep motion catalog, loaded on demand when a value or technique is needed
+skills/design-review/SKILL.md        Companion review skill, invoked explicitly when you want a critique
 .claude-plugin/plugin.json           Plugin manifest, for installing as a Claude plugin
 README.md                            This file
 LICENSE                              MIT
 ```
 
-The standard covers how to operate (frame first, kill the generic default, verify with your own eyes, finish the sweep), avoiding generic design, motion and animation, micro-interactions, interaction details, visual craft, accessibility, performance, and a pre-ship checklist.
+The standard covers how to operate (frame first, kill the generic default, verify with your own eyes, finish the sweep), avoiding generic design, motion and animation, micro-interactions, interaction details, visual craft, accessibility, performance, and a pre-ship checklist. The detailed motion catalog (named easing curves, spring configs, `@starting-style` and WAAPI, `clip-path` reveals, blur-masked crossfades, gesture thresholds, debugging) lives in `MOTION.md`, loaded only when a motion decision needs the exact value, so the main skill stays lean.
+
+A second skill, `design-review`, reviews a diff against the same bar and returns a findings table plus an explicit Block or Approve verdict. It does not auto-trigger; pull it in when you want a critique rather than a build.
 
 ## Install
 
-Pick whichever fits how you use Claude. All three are portable across stacks.
+Pick whichever fits how you use Claude. All are portable across stacks.
 
 **1. As a skill (recommended).** Loads only when the work is actually design or front-end, so it never bloats unrelated sessions. Copy the skill folder into your project (or your home config):
 

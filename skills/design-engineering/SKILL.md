@@ -82,6 +82,10 @@ Motion should feel alive and purposeful, never like a loading spinner standing i
 
 **Respect reduced motion.** Honor `@media (prefers-reduced-motion: reduce)`. It does not mean "remove all motion"; it means replace large vestibular triggers (big scale, pan, spin, parallax) with a gentle opacity fade. Author the full motion, then soften it inside the query.
 
+**Physical and interruptible by default.** Never animate from `scale(0)`; nothing appears from nothing, so start at `scale(0.95)` with opacity. Scale anchored surfaces (popovers, dropdowns, tooltips) from their trigger via `transform-origin`, not center; modals are the exception and stay centered. For anything triggered rapidly or by gesture, use CSS transitions or springs that retarget from the current position, not keyframes that restart from zero. Slow the phase where the user is deciding and snap the phase where the system responds (a hold can run seconds, its release should snap in ~200ms).
+
+For the full execution catalog (named easing curves, spring configs, `@starting-style` and WAAPI, `clip-path` reveals for tabs / hold-to-delete / scroll / comparison sliders, blur-masked crossfades, gesture velocity thresholds, the Framer Motion shorthand caveat, and debugging in slow motion), load [MOTION.md](MOTION.md).
+
 ---
 
 ## Micro-interactions and feedback
