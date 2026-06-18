@@ -29,7 +29,22 @@ A second skill, `design-review`, reviews a diff against the same bar and returns
 
 Pick whichever fits how you use Claude. All are portable across stacks.
 
-**1. As a skill (recommended).** Loads only when the work is actually design or front-end, so it never bloats unrelated sessions. Copy the skill folder into your project (or your home config):
+**1. With the skills CLI (recommended).** [`npx skills`](https://github.com/vercel-labs/skills) installs straight from this repo and works across Claude Code, Cursor, Codex, and more. No clone, no registration.
+
+```bash
+# the standard
+npx skills add GambogeSplash/taste --skill design-engineering
+
+# the standard plus the companion review skill
+npx skills add GambogeSplash/taste --skill '*'
+
+# install for every project on your machine
+npx skills add GambogeSplash/taste --skill design-engineering -g
+```
+
+It loads only when the work is actually design or front-end, so it never bloats unrelated sessions. Claude picks it up automatically when you ask for UI, frontend, components, animation, or visual design.
+
+**2. By hand, as a skill.** Copy the folder into your project (or your home config) if you would rather not use the CLI:
 
 ```bash
 # project-local
@@ -39,21 +54,19 @@ cp -r skills/design-engineering .claude/skills/
 cp -r skills/design-engineering ~/.claude/skills/
 ```
 
-Claude picks it up automatically when you ask for UI, frontend, components, animation, or visual design.
-
-**2. As an always-on rule.** Put it where Claude reads project rules, optionally scoped to front-end files so it only loads when relevant:
+**3. As an always-on rule.** Put it where Claude reads project rules, optionally scoped to front-end files so it only loads when relevant:
 
 ```bash
 cp skills/design-engineering/SKILL.md .claude/rules/design-engineering.md
 ```
 
-**3. From CLAUDE.md.** Keep `CLAUDE.md` short and import the standard so the detail lives in one place:
+**4. From CLAUDE.md.** Keep `CLAUDE.md` short and import the standard so the detail lives in one place:
 
 ```markdown
 @skills/design-engineering/SKILL.md
 ```
 
-**4. As a Claude plugin.** This repo ships a `.claude-plugin/plugin.json` manifest, so it can be installed as a plugin and the skill is registered automatically. Point your plugin install at this repo.
+**5. As a Claude plugin.** This repo ships a `.claude-plugin/plugin.json` manifest, so it can be installed as a plugin and both skills are registered automatically. Point your plugin install at this repo.
 
 ## Using it
 
