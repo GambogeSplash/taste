@@ -2,7 +2,7 @@
 
 A design-engineering standard for Claude. Drop it into a project and Claude does front-end and design work to a senior bar: considered visuals instead of generic defaults, motion that feels right, real accessibility, and the habit most AI design work skips, looking at the rendered result before calling it done.
 
-It is full-spectrum and vendor-neutral. In 2026 the best design engineers are fluent in motion, so Taste goes deep there: the battle-tested recipes (named easing curves, spring physics, interruptible transitions, `clip-path` reveals, GPU and main-thread traps, gesture thresholds) plus the current platform-native layer most guides have not caught up to (View Transitions, scroll-driven animations, animating `height: auto`, discrete-property exits, CSS `linear()` springs), and the habit of judging motion by watching it run, not by reading the values. Then it keeps going across the rest of the surface that motion alone cannot carry: framing the problem, type and color and layout, depth, micro-interactions, accessibility, and performance. It teaches the reasoning a senior design engineer uses, not one person's house style, and gives the exact numbers to hit (motion durations, contrast ratios, hit targets, Core Web Vitals), then asks Claude to verify against them.
+It is full-spectrum and vendor-neutral, and the depth is not only in motion. Each visual discipline carries the same two layers: a judgment-first summary in the main skill, and a deep execution catalog loaded on demand when a decision needs the exact value. Motion gets the battle-tested recipes (named easing curves, spring physics, interruptible transitions, `clip-path` reveals, GPU and main-thread traps, gesture thresholds) plus the current platform-native layer most guides have not caught up to (View Transitions, scroll-driven animations, animating `height: auto`, discrete-property exits, CSS `linear()` springs). Typography, color, and composition get the same treatment: type scales and pairing and optical correction; OKLCH ramps, tinted neutrals, and dark mode as a remap rather than an inversion; hierarchy, grid, and structure without reflexive cards. Through all of it runs the habit most AI design work skips: judging the result by looking at it rendered, not by reading the values. It teaches the reasoning a senior design engineer uses, not one person's house style, and gives the exact numbers to hit (motion durations, contrast ratios, hit targets, Core Web Vitals), then asks Claude to verify against them.
 
 ## Why
 
@@ -36,15 +36,23 @@ It is the kind of motion the standard argues for: an animated registered `@prope
 ## What is inside
 
 ```
-skills/design-engineering/SKILL.md   The standard itself, ready to use as a skill
-skills/design-engineering/MOTION.md  Deep motion catalog, loaded on demand when a value or technique is needed
-skills/design-review/SKILL.md        Companion review skill, invoked explicitly when you want a critique
-.claude-plugin/plugin.json           Plugin manifest, for installing as a Claude plugin
-README.md                            This file
-LICENSE                              MIT
+skills/design-engineering/SKILL.md        The standard itself, ready to use as a skill
+skills/design-engineering/MOTION.md        Deep motion catalog, loaded on demand
+skills/design-engineering/TYPOGRAPHY.md    Deep type catalog, loaded on demand
+skills/design-engineering/COLOR.md         Deep color catalog, loaded on demand
+skills/design-engineering/COMPOSITION.md   Deep layout catalog, loaded on demand
+skills/design-review/SKILL.md              Companion review skill, invoked explicitly when you want a critique
+.claude-plugin/plugin.json                 Plugin manifest, for installing as a Claude plugin
+README.md                                  This file
+LICENSE                                    MIT
 ```
 
-The standard covers how to operate (frame first, kill the generic default, verify with your own eyes, finish the sweep), avoiding generic design, motion and animation, micro-interactions, interaction details, visual craft, accessibility, performance, and a pre-ship checklist. The detailed motion catalog (named easing curves, spring configs, `@starting-style` and WAAPI, `clip-path` reveals, blur-masked crossfades, gesture thresholds, debugging) lives in `MOTION.md`, loaded only when a motion decision needs the exact value, so the main skill stays lean.
+The standard covers how to operate (frame first, kill the generic default, verify with your own eyes, finish the sweep), avoiding generic design, motion and animation, micro-interactions, interaction details, visual craft, accessibility, performance, and a pre-ship checklist. Each visual discipline keeps a judgment-first summary in the main skill and a deep execution catalog beside it, loaded only when a decision needs the exact value, so the main skill stays lean:
+
+- `MOTION.md`: named easing curves, spring configs, `@starting-style` and WAAPI, `clip-path` reveals, blur-masked crossfades, gesture thresholds, the 2026 platform-native layer, debugging.
+- `TYPOGRAPHY.md`: type scales by ratio, pairing rules, optical tracking, widow control, tabular figures, OpenType features, variable fonts, flash-free font loading.
+- `COLOR.md`: OKLCH ramps and tinted neutrals, semantic tokens, dark mode as a remap not an inversion, contrast in practice, `color-mix` and relative color.
+- `COMPOSITION.md`: hierarchy and the one entry point, the column grid, whitespace versus deliberate density, scannability, alignment, structure without reflexive cards.
 
 A second skill, `design-review`, reviews a diff against the same bar and returns a findings table plus an explicit Block or Approve verdict. It does not auto-trigger; pull it in when you want a critique rather than a build.
 

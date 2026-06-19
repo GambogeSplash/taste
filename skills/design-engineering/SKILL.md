@@ -39,9 +39,9 @@ These decide whether the work is good before any pixel is placed.
 
 The goal is a considered, specific look reached by reasoning, not by reaching for a default.
 
-**Typography carries most of the signal.** High contrast between two type choices reads as intentional: a display serif with a clean grotesque, a geometric sans with a monospace for labels. Set body text at 16px or larger (long-form 18 to 20px), line-height around 1.5, and line length between 45 and 75 characters. Do not default to Inter, Roboto, Open Sans, or the system stack out of habit; choose a typeface that fits the product's character, and do not over-pick the same trendy alternative every time either. The skill is matching type to product, not memorizing a font.
+**Typography carries most of the signal.** High contrast between two type choices reads as intentional: a display serif with a clean grotesque, a geometric sans with a monospace for labels. Set body text at 16px or larger (long-form 18 to 20px), line-height around 1.5, and line length between 45 and 75 characters. Do not default to Inter, Roboto, Open Sans, or the system stack out of habit; choose a typeface that fits the product's character, and do not over-pick the same trendy alternative every time either. The skill is matching type to product, not memorizing a font. For type scales by ratio, pairing rules, optical tracking, widow control, tabular figures, OpenType features, variable fonts, and flash-free font loading, load [TYPOGRAPHY.md](TYPOGRAPHY.md).
 
-**Commit to a real palette.** Build 8 to 10 steps per color so you always have the exact value you need. Choose colors that say something about the product rather than the default blue. Use color with intent: one accent doing real work beats six competing for attention.
+**Commit to a real palette.** Build 8 to 10 steps per color so you always have the exact value you need. Choose colors that say something about the product rather than the default blue. Use color with intent: one accent doing real work beats six competing for attention. For building OKLCH ramps and tinted neutrals, semantic tokens, dark mode as a remap rather than an inversion, contrast in practice, and `color-mix`/relative-color tricks, load [COLOR.md](COLOR.md).
 
 **Let visual weight map to truth.** Things that are real, confirmed, or primary get strong, saturated, solid treatment. Things that are pending, uncertain, or secondary get a quieter treatment (lower contrast, a hatch or tint, less weight). Do not weaken the confident state to make it elegant; weaken the uncertain one. The interface should never imply a number or state the underlying data contradicts.
 
@@ -154,6 +154,8 @@ Target AA in production. Logos, disabled controls, and pure decoration are exemp
 **Border radius.** Keep it consistent, and nest it correctly: inner radius equals outer radius minus the padding between them, so concentric corners stay parallel (`calc(var(--outer) - var(--padding))`). Reusing the same radius on parent and child makes the gap look uneven.
 
 **Optical alignment.** Trust your eye over the bounding box. Center non-rectangular shapes by their visual mass, not their rectangle (the play triangle in a circle needs a nudge right). Adjust optically whenever the math looks off.
+
+For composing the whole screen (hierarchy and the one entry point, the column grid, whitespace versus deliberate density, scannability, alignment, and structure without reflexive cards), load [COMPOSITION.md](COMPOSITION.md).
 
 ---
 
